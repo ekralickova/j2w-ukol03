@@ -5,34 +5,33 @@
     <title>Vizitkovník</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="stylesheet"
-          href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="icon" type="image/png" href="/images/favicon.png">
 </head>
 <body>
-<div th:each="card, iterStat : ${card}" class="seznam">
-    <a href="/detail" th:href="@{/detail(id=${iterStat.index})}">
+<div class="seznam">
+    <a th:each="cards, iterStat : ${card}" href="/detail" th:href="@{/detail(id=${iterStat.index})}">
         <div class="vizitka">
-            <div class="jmeno" th:text="${card.name}">Dita (Přikrylová) Formánková</div>
-            <div class="firma" th:text="${card.company}">Czechitas z. s.</div>
+            <div class="jmeno" th:text="${cards.name}">Dita (Přikrylová) Formánková</div>
+            <div class="firma" th:text="${cards.company}">Czechitas z. s.</div>
             <div class="udaje">
                 <div class="adresa">
-                    <div th:text="${card.street}">Vác</div>
-                    <div th:text="${card.city}"></div>
+                    <div th:text="${cards.street}">Vác</div>
+                    <div th:text="${cards.city}"></div>
                 </div>
                 <div class="kontakty">
-                    <div>lavské náměstí 837/11
-                        <i th:if="${card.email} != null" class="las la-at"></i>
-                        <span th:if="${card.email} != null" th:text="${card.email}"></span>
+                    <div>
+                        <i th:if="${cards.email} != null" class="las la-at"></i>
+                        <span th:if="${cards.email} != null" th:text="${cards.email}"></span>
                     </div>
                     <div>
-                        <i th:if="${card.phoneNumber} != null" class="las la-phone-alt"></i>
-                        <span th:if="${card.phoneNumber} != null" th:text="${card.phoneNumber}"></span>
+                        <i th:if="${cards.phoneNumber} != null" class="las la-phone-alt"></i>
+                        <span th:if="${cards.phoneNumber} != null" th:text="${cards.phoneNumber}"></span>
                     </div>
                     <div>
-                        <i th:if="${card.webAddress} != null" class="las la-globe"></i>
-                        <span th:if="${card.webAddress} != null" th:text="${card.webAddress}"> <i class="las la-globe"></i>Stokorcový les</span>
+                        <i th:if="${cards.webAddress} != null" class="las la-globe"></i>
+                        <span th:if="${cards.webAddress} != null" th:text="${cards.webAddress}"> <i class="las la-globe"></i>Stokorcový les</span>
                     </div>
 
                 </div>

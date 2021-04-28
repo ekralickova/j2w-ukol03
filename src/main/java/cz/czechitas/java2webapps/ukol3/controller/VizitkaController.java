@@ -20,7 +20,6 @@ public class VizitkaController {
                 new Card("name 1", "Czechitas z. s.", "street 1/2", "Brno 63900", "email@email.com", "phoneNumber", null),
                 new Card("name 2", "Czechitas z. s.", "street 9 3/4", "Praha 11000", null, "phoneNumber", "www.address.com"),
                 new Card("name 3", "Czechitas z. s.", "street 9", "Brno 63900", "email@email.com", null, "www.address.com")
-
         );
     }
 
